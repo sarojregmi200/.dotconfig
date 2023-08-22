@@ -18,7 +18,10 @@ PS1=' %B%F{202}%~%f%b ${vcs_info_msg_0_}: '
 # setting vs code shortcut
 alias code="flatpak run com.visualstudio.code"
 
-# setting the shell defaults
+# setting the shell defaults and environment variables
+
 # terminal
 export VISUAL=nvim
 
+# XDG
+export XDG_CONFIG_HOME=~/.dotconfig
