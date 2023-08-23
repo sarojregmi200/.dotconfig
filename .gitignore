@@ -1,0 +1,4 @@
+# the files that are not added by me or configured by me.
+# TODO: find a way to not change the config home variable and still point custom config to this directory.
+ibus/
+pulse/
