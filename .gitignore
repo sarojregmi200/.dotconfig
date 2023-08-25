@@ -2,3 +2,4 @@
 # TODO: find a way to not change the config home variable and still point custom config to this directory.
 ibus/
 pulse/
+obs-studio/
