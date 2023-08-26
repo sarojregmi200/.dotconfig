@@ -2,7 +2,8 @@ autoload -Uz  add-zsh-hook vcs_info
 
 # for auto/tab completion
 autoload -U compinit 
-zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' menu select # matcher-list enables the case insensitivity.
+setopt MENU_COMPLETE # to automatically show the results regardless of the case soon after the tab is pressed.
 compinit
 
 # configuring the vi mode
