@@ -101,6 +101,7 @@ require('lazy').setup({
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
 
+
       -- Adds LSP completion capabilities
       'hrsh7th/cmp-nvim-lsp',
 
@@ -139,7 +140,6 @@ require('lazy').setup({
       vim.cmd.colorscheme 'onedark'
     end,
   },
-
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -222,6 +222,9 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+
+-- setting up the relative numbering 
+vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -525,4 +528,5 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
 
