@@ -189,4 +189,4 @@ bar {
 }
 
 # using picom as the compositor.
-exec --no-startup-id picom --config ~/.dotconfig/picom/picom.conf -b
+exec_always --no-startup-id picom --config ~/.dotconfig/picom/picom.conf -b
