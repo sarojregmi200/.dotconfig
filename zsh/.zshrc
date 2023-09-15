@@ -25,22 +25,23 @@ zstyle ':vcs_info:git:*' formats '%c%u(%b)'
 # setting the prompt string
 PS1=' %B%F{202}%20<~/...<%~%<<%f%b ${vcs_info_msg_0_}: ' 
 
-# setting vs code shortcut
-alias code="flatpak run com.visualstudio.code"
-
-# setting the shell defaults and environment variables
-
 # terminal
 export VISUAL=nvim
-
-# XDG
-export XDG_CONFIG_HOME=~/.dotconfig
 
 # configuring the history
 HISTSIZE=5000
 SAVEHIST=5000
-HISTFILE=~/.dotconfig/zsh/.zsh_history
+HISTFILE=~/.config/zsh/.zsh_history
 
+# pnpm
+export PNPM_HOME="/home/saroj/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+#
 
-
-# starting a tmux session as soon as the zsh loads.
+# for the bun to run
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

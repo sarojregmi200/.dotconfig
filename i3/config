@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -49,10 +49,10 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty --config-file=$HOME/.config/alacitty/alacritty.yml
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 # A more modern dmenu replacement is rofi:
@@ -109,7 +109,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d exec rofi -show drun --no-startup-id 
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -185,8 +185,23 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command i3status -c /$HOME/.config/i3/i3status.conf
+        mode hide
+        hidden_state hide
+        modifier $mod
 }
 
 # using picom as the compositor.
-exec_always --no-startup-id picom --config ~/.dotconfig/picom/picom.conf -b
+exec_always --no-startup-id picom --config ../picom/picom.conf -b
+
+# setting up gaps 
+gaps inner 5
+
+# removing the border and title bar
+default_border none
+default_floating_border none
+
+
+# setting up the background
+exec_always nitrogen --no-startup-id --restore 
+
