@@ -10,7 +10,7 @@ vim.opt.smartindent = true
 vim.opt.autoindent = true -- auto indent
 
 -- line wrap
-vim.opt.wrap = true
+vim.opt.wrap = false 
 
 vim.opt.swapfile = false
 vim.opt.backup = false

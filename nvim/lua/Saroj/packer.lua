@@ -18,22 +18,28 @@ return require('packer').startup(function(use)
 		'VonHeikemen/lsp-zero.nvim',
 		requires = {
 			-- LSP Support
-			{'neovim/nvim-lspconfig'},             
-			{'williamboman/mason.nvim'},           
-			{'williamboman/mason-lspconfig.nvim'}, 
+			{'neovim/nvim-lspconfig'},
+			{'williamboman/mason.nvim'},
+			{'williamboman/mason-lspconfig.nvim'},
 
 			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},     
-			{'hrsh7th/cmp-nvim-lsp'}, 
+			{'hrsh7th/nvim-cmp'},
+			{'hrsh7th/cmp-nvim-lsp'},
 			{'hrsh7th/cmp-buffer'},
 			{'hrsh7th/cmp-path'},
 			{'hrsh7th/cmp-nvim-lua'},
 			{'saadparwaiz1/cmp_luasnip'},
-		
 			-- Snippiets
-			{'L3MON4D3/LuaSnip'},     
+			{'L3MON4D3/LuaSnip'},
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
+    use({
+        "jose-elias-alvarez/null-ls.nvim",
+        config = function()
+            require("null-ls").setup()
+        end,
+        requires = { "nvim-lua/plenary.nvim" },
+    })
 end)
 
