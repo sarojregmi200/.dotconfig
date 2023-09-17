@@ -203,5 +203,4 @@ default_floating_border none
 
 
 # setting up the background
-exec_always nitrogen --no-startup-id --restore 
-
+exec_always --no-startup-id nitrogen --restore 
