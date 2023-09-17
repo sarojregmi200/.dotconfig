@@ -34,12 +34,10 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
-    use({
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-            require("null-ls").setup()
-        end,
-        requires = { "nvim-lua/plenary.nvim" },
-    })
+ use {
+      'stevearc/conform.nvim',
+      config = function() require('conform').setup() end
+    }
+
 end)
 
