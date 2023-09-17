@@ -45,3 +45,8 @@ esac
 # for the bun to run
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# adding deno to the PATH
+
+export DENO_INSTALL="/home/saroj/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
