@@ -209,3 +209,10 @@ default_floating_border none
 
 # setting up the background
 exec_always --no-startup-id nitrogen --restore 
+
+# setting up the mouse settings.
+
+exec_always --no-startup-id xinput set-prop 13 328 1
+# 328 is the id for acceleration and 1 is the value which is the max value of acceleration.
+exec_always --no-startup-id xinput set-prop 13 317 1
+# 317 is for natural scrolling (i.e scrolling direction)
