@@ -50,3 +50,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 export DENO_INSTALL="/home/saroj/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# widget to call the script to search imp files
+bindkey  -s '^f'  '~/.config/.dotfiles/bin/tmux-fzf-creator^M' 
