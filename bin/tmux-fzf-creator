@@ -15,6 +15,7 @@ tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
     tmux new-session -s $selected_name -c $selected
+    tmux new-window -Sdn Runner
     exit 0
 fi
 
