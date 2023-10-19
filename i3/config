@@ -217,3 +217,7 @@ exec_always --no-startup-id xinput set-prop 'MSFT0001:01 04F3:3140 Touchpad' 328
 exec_always --no-startup-id xinput set-prop 'MSFT0001:01 04F3:3140 Touchpad' 317 1
 # 317 is for natural scrolling (i.e scrolling direction)
 exec_always --no-startup-id xinput set-prop 'MSFT0001:01 04F3:3140 Touchpad' 346 1
+
+
+# creating a printscreen shortcut
+bindsym Print exec --no-startup-id flameshot gui
