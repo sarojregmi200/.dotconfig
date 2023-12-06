@@ -47,7 +47,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # adding deno to the PATH
-
 export DENO_INSTALL="/home/saroj/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
@@ -57,3 +56,8 @@ bindkey  -s '^f'  '~/.config/.dotfiles/bin/tmux-fzf-creator^M'
 # this is for loading nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+
+#adding go the path
+GO_PATH='/usr/local/go'
+export PATH="$GO_PATH/bin:$PATH"

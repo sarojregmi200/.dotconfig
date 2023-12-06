@@ -211,12 +211,13 @@ default_floating_border none
 exec_always --no-startup-id nitrogen --restore 
 
 # setting up the mouse settings.
-
-exec_always --no-startup-id xinput set-prop 'MSFT0001:01 04F3:3140 Touchpad' 328 1
+# this is a okey way of configuring the mouse but it is not the optimal way so, I am going with the way suggested in this blog
+# https://cravencode.com/post/essentials/enable-tap-to-click-in-i3wm/
+# exec_always --no-startup-id xinput set-prop 'MSFT0001:01 04F3:3140 Touchpad' 328 1
 # 328 is the id for acceleration and 1 is the value which is the max value of acceleration.
-exec_always --no-startup-id xinput set-prop 'MSFT0001:01 04F3:3140 Touchpad' 317 1
+# exec_always --no-startup-id xinput set-prop 'MSFT0001:01 04F3:3140 Touchpad' 317 1
 # 317 is for natural scrolling (i.e scrolling direction)
-exec_always --no-startup-id xinput set-prop 'MSFT0001:01 04F3:3140 Touchpad' 346 1
+# exec_always --no-startup-id xinput set-prop 'MSFT0001:01 04F3:3140 Touchpad' 346 1
 
 
 # creating a printscreen shortcut
