@@ -146,4 +146,6 @@ drun-display-format: "{name}";
       sorting-method:    "name";
   }
 }
-@theme "current"
+//@theme "current"
+//@theme "/usr/share/rofi/themes/Monokai.rasi"
+@theme "/usr/share/rofi/themes/DarkBlue.rasi"

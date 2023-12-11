@@ -54,7 +54,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty --config-file=$HOME/.config/alacitty/alacritty.yml
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -197,7 +197,7 @@ bar {
 }
 
 # using picom as the compositor.
-exec_always --no-startup-id picom --config ../picom/picom.conf -b
+exec_always --no-startup-id picom --config /$HOME/.config/picom/picom.conf -b
 
 # setting up gaps 
 gaps inner 5
@@ -218,7 +218,6 @@ exec_always --no-startup-id nitrogen --restore
 # exec_always --no-startup-id xinput set-prop 'MSFT0001:01 04F3:3140 Touchpad' 317 1
 # 317 is for natural scrolling (i.e scrolling direction)
 # exec_always --no-startup-id xinput set-prop 'MSFT0001:01 04F3:3140 Touchpad' 346 1
-
 
 # creating a printscreen shortcut
 bindsym Print exec --no-startup-id flameshot gui
