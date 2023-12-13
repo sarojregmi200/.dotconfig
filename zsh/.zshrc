@@ -33,31 +33,11 @@ HISTSIZE=5000
 SAVEHIST=5000
 HISTFILE=~/.config/zsh/.zsh_history
 
-# pnpm
-export PNPM_HOME="/home/saroj/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-#
-
-# for the bun to run
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# adding deno to the PATH
-export DENO_INSTALL="/home/saroj/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
 # widget to call the script to search imp files
-bindkey  -s '^f'  '~/.config/.dotfiles/bin/tmux-fzf-creator^M' 
-
-# this is for loading nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+bindkey  -s '^f'  '~/.config/.dotconfig/bin/tmux-fzf-creator^M' 
 
 
-#adding go the path
-GO_PATH='/usr/local/go'
-export PATH="$GO_PATH/bin:$PATH"
+#enabaling the ls color and ll as a better ls alias
+alias ll="ls -alG"
+alias ls="ls --color=auto"
+
