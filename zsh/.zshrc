@@ -6,9 +6,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' menu select # matcher-
 setopt MENU_COMPLETE # to automatically show the results regardless of the case soon after the tab is pressed.
 compinit
 
-# configuring the vi mode
-# bindkey -v
-# export KEYTIMEOUT=1
+# for autosuggestions
+source ~/.config/.dotconfig/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # enabaling the '${var}' option for string formatting.
 setopt prompt_subst
@@ -36,8 +35,14 @@ HISTFILE=~/.config/zsh/.zsh_history
 # widget to call the script to search imp files
 bindkey  -s '^f'  '~/.config/.dotconfig/bin/tmux-fzf-creator^M' 
 
-
 #enabaling the ls color and ll as a better ls alias
 alias ll="ls -alG"
 alias ls="ls --color=auto"
 
+# pnpm
+export PNPM_HOME="/home/saroj/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
