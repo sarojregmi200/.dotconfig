@@ -9,10 +9,6 @@ compinit
 # for autosuggestions
 source ~/.config/.dotconfig/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# for syntax highlighting
-source ~/.config/.dotconfig/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-
 # enabaling the '${var}' option for string formatting.
 setopt prompt_subst
 
