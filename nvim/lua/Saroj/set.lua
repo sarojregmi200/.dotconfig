@@ -27,3 +27,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+
+-- changing the cursor to block
+vim.opt.guicursor = ""
