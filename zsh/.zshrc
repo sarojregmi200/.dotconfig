@@ -43,6 +43,7 @@ alias ls="ls --color=auto"
 export PNPM_HOME="/home/saroj/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+  *) export PATH="$PNPM_HOME:~/.local/colorscheme/:$PATH" ;;
 esac
 # pnpm end
+

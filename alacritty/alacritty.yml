@@ -5,20 +5,10 @@ window:
   decorations: none
   opacity: 1
 
-define: &font_family 'SF Mono'
 font:
   normal:
-    family: *font_family 
+    family: "Fira Code"
     style: Regular
-  bold:
-    family: *font_family 
-    style: Bold
-  italic:
-    family: *font_family 
-    style: Italic
-  bold_italic:
-    family: *font_family 
-    style: Bold Italic
   size: 10.0
 
 cursor:
