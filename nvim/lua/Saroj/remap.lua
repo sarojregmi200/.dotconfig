@@ -8,6 +8,8 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("i", "kj", "<ESC>")
 vim.keymap.set("i", "jk", "<ESC>")
 
--- remaping zoom out and zoom in
-vim.api.nvim_set_keymap("n", " zz", "<c-w>_", { noremap = true })
-vim.api.nvim_set_keymap("n", " zo", "<c-w>=", { noremap = true })
+-- mapping the system clipboard
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+Y')
+vim.keymap.set("x", "<leader>y", '"+y')
+vim.keymap.set("x", "<leader>Y", '"+Y')
