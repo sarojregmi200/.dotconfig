@@ -13,3 +13,6 @@ vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
 vim.keymap.set("x", "<leader>y", '"+y')
 vim.keymap.set("x", "<leader>Y", '"+Y')
+
+-- mapping the vim diagnonistics
+vim.keymap.set("n", "<leader>e", "<cmd> lua vim.diagnostic.open_float()<cr>")
