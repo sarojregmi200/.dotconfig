@@ -30,9 +30,9 @@ export VISUAL=nvim
 # configuring the history
 HISTSIZE=5000
 SAVEHIST=5000
-HISTFILE=~/.config/zsh/.zsh_history
+HISTFILE=~/.config/.dotconfig/zsh/.zshhist
 
-# widget to call the script to search imp files
+# shortcut to call the script to search imp files
 bindkey  -s '^f'  '~/.config/.dotconfig/bin/tmux-fzf-creator^M' 
 
 #enabaling the ls color and ll as a better ls alias
@@ -45,5 +45,16 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:~/.local/colorscheme/:$PATH" ;;
 esac
-# pnpm end
+
+
+export PATH="$PATH:/home/saroj/.local/bin"
+
+
+# Android studio PATH
+export ANDROID_HOME=$HOME/Android/Sdk/
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Adding rust tool chain to PATH
+export PATH=$PATH:$HOME/.cargo/bin/
 

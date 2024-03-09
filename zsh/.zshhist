@@ -1,0 +1,101 @@
+clea
+ll
+~/.config/.dotconfig/bin/tmux-fzf-creator
+~/.config/.dotconfig/bin/tmux-fzf-creator
+nvim ./
+clear
+tmux attach-session
+tmux ls
+lsblk
+clear
+ls /mnt
+sudo mkdir /mnt/harddisk
+clear
+ls /mnt
+sudo mount /mnt/harddisk /
+lsblk
+sudo mount /dev/sda1 /mnt/harddisk 
+clear
+sudo chown saroj /mnt 
+sudo barve
+sudo brave
+sudo brave
+startx
+reboot
+nmcli
+reboot
+startx
+sudo mount /dev/sda1 /mnt/harddisk 
+clear
+shutdown 0
+cd Documents
+cd Notes
+ll
+git init
+git branch -b main 
+git branch main 
+git add .
+git commit -m "Initialized the project"
+clear
+git checkout -b main 
+git status
+git branch
+git branch -R master
+git branch -D master
+git add .
+git commit -m "Initialized the project"
+ll
+git status
+git remote add origin https://github.com/sarojregmi200/Notes.git
+git push
+git push --set-upstream origin main 
+clear
+git push
+git help config
+git config push.autoSetupRemote
+git push
+git push --set-upstream origin main 
+clear
+clear
+startx
+~/.config/.dotconfig/bin/tmux-fzf-creator
+nvim ./
+git branch
+git switch blog
+git stash *
+git status
+nvim ./
+git checkout blog
+nvim ,.
+nvim ./
+git add .
+git commit -m "Added a env example"
+cd 
+ll
+cd Documents
+ll
+cd security_bug_nepali_government
+ll
+mkdir sambidan_wala_site_law_wala
+mv aiowps_backups sambidan_wala_site_law_wala
+ll
+nvim possibleBug.MD
+cd ..
+cd projects/CosogNepal
+nvim ./
+\:q
+exit
+cd .config
+cd 
+cd .config/.dotconfig/nvim
+nvim ./
+nvim ./
+nvim ./
+nvim ./
+nvim ./
+exi
+\:q
+exi
+exit
+\:q
+exit

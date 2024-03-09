@@ -23,8 +23,9 @@ return {
 
 		telescope.load_extension("fzf")
 
-		vim.keymap.set("n", "<leader>sf", builtin.find_files, {})
-		vim.keymap.set("n", "<leader>sg", builtin.git_files, {})
+		-- keymaps
+		vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
+		vim.keymap.set("n", "<leader>sg", builtin.git_files, { desc = "[S]earch [G]it files" })
 		vim.keymap.set(
 			"n",
 			"<leader>ss",
@@ -37,5 +38,7 @@ return {
 			"<cmd>Telescope grep_string<cr>",
 			{ desc = "Find the string under the cursor" }
 		)
+		vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Search the nvim help" })
+		vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "Search the Keymaps" })
 	end,
 }

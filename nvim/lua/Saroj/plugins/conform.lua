@@ -22,8 +22,8 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<c-j>", function()
+		vim.keymap.set("n", "<c-f>", function()
 			conform.format()
-		end, opts)
+		end, { desc = "Format the current file" })
 	end,
 }
