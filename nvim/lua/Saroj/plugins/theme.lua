@@ -24,11 +24,6 @@ return {
 		vim.api.nvim_set_hl(0, "signColumn", { bg = "none" })
 
 		-- trying to make the popup opaque
-		vim.api.nvim_set_hl(0, "DiagnosticError", { bg = "white" })
-		vim.api.nvim_set_hl(0, "Float", { bg = "white" })
-		vim.api.nvim_set_hl(0, "NvimFloat", { bg = "white" })
-		vim.api.nvim_set_hl(0, "DiagnosticFloatingError", { bg = "white" })
-		vim.api.nvim_set_hl(0, "CocDiagnosticError", { bg = "white" })
-		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "white" })
+		--
 	end,
 }

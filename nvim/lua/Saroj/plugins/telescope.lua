@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -40,5 +41,6 @@ return {
 		)
 		vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Search the nvim help" })
 		vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "Search the Keymaps" })
+		vim.keymap.set("n", "<leader>sd", builtin.keymaps, { desc = "Search the diagnostics" })
 	end,
 }

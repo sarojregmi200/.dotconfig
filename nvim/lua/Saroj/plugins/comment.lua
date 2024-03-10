@@ -1,5 +1,6 @@
 return {
 	"numToStr/Comment.nvim",
+	-- for todo and notes comments and fixed comment highlighing
 	config = function()
 		local options = {
 			opleader = {

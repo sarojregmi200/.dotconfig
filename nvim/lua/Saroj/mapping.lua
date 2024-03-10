@@ -15,7 +15,7 @@ vim.keymap.set("x", "<leader>y", '"+y')
 vim.keymap.set("x", "<leader>Y", '"+Y')
 
 -- mapping the vim diagnonistics
-vim.keymap.set("n", "<leader>e", function()
+vim.keymap.set("n", "<leader>d", function()
 	vim.diagnostic.config({ float = { border = "single" } })
 	vim.diagnostic.open_float()
 end, { desc = "Opens the error diagnostic float" })

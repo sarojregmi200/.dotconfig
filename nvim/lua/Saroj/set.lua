@@ -34,3 +34,6 @@ vim.opt.guicursor = ""
 -- cursor line and signline config
 vim.opt.cursorline = true
 vim.opt.signcolumn = "yes"
+
+-- setting the concellevel for rendering markdown efficiently
+vim.api.nvim_set_option_value("conceallevel", 2, {})
