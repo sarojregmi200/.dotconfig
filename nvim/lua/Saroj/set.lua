@@ -36,4 +36,12 @@ vim.opt.cursorline = true
 vim.opt.signcolumn = "yes"
 
 -- setting the concellevel for rendering markdown efficiently
-vim.api.nvim_set_option_value("conceallevel", 2, {})
+-- setting the concellevel only in markdown files
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	desc = "Setting conceal level for better preview Markdown files",
+	pattern = { "*.txt", "*.md" },
+	group = vim.api.nvim_create_augroup("set-conceallevel-md", { clear = true }),
+	callback = function()
+		vim.api.nvim_set_option_value("conceallevel", 2, {})
+	end,
+})

@@ -23,7 +23,8 @@ return {
 		-- removing the signColumn background
 		vim.api.nvim_set_hl(0, "signColumn", { bg = "none" })
 
-		-- trying to make the popup opaque
-		--
+		-- removing the transparent window
+		local currentWindow = vim.api.nvim_get_current_win()
+		vim.api.nvim_win_set_option(currentWindow, "winblend", 0)
 	end,
 }
