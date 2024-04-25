@@ -1,6 +1,9 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter-refactor",
+	},
 	config = function()
 		local configs = require("nvim-treesitter.configs")
 		---@diagnostic disable-next-line: missing-fields
@@ -9,6 +12,18 @@ return {
 			sync_install = false,
 			highlight = { enable = true },
 			indent = { enable = true },
+			refactor = {
+				highlight_definitions = { enable = true, clear_on_cursor_move = true },
+				smart_rename = { enable = true },
+				navigation = { enable = true },
+				keymaps = {
+					list_definitions = "<leader>ld",
+					-- list_definitions_toc = "gO",
+					goto_next_usage = "gnu",
+					goto_previous_usage = "gpu",
+					smart_rename = "<leader>srn",
+				},
+			},
 		})
 	end,
 }

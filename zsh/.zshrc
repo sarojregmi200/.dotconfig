@@ -24,16 +24,26 @@ zstyle ':vcs_info:git:*' formats '%c%u(%b)'
 # setting the prompt string
 PS1=' %B%F{202}%20<~/...<%~%<<%f%b ${vcs_info_msg_0_}: ' 
 
-# terminal
+# Editor
+export PATH="$PATH:/opt/nvim-linux64/bin"
 export VISUAL=nvim
+
+# Alias for terminal 
+alias wezterm='flatpak run org.wezfurlong.wezterm'
 
 # configuring the history
 HISTSIZE=5000
 SAVEHIST=5000
 HISTFILE=~/.config/.dotconfig/zsh/.zshhist
 
+# adding the fzf keybindings
+eval "$(fzf --zsh)"
+
 # shortcut to call the script to search imp files
 bindkey  -s '^f'  '~/.config/.dotconfig/bin/tmux-fzf-creator^M' 
+
+# shortcut to open notes folder when pressing ctrl + n
+bindkey  -s '^n'  '~/.config/.dotconfig/bin/NotesOppener^M' 
 
 #enabaling the ls color and ll as a better ls alias
 alias ll="ls -alG"
@@ -43,7 +53,7 @@ alias ls="ls --color=auto"
 export PNPM_HOME="/home/saroj/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:~/.local/colorscheme/:$PATH" ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
 
@@ -58,3 +68,20 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # Adding rust tool chain to PATH
 export PATH=$PATH:$HOME/.cargo/bin/
 
+# bun completions
+[ -s "/home/saroj/.bun/_bun" ] && source "/home/saroj/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# adding go to the path
+export GO_PATH="/usr/local/go/"
+
+
+# addind the zoxide configuration
+eval "$(zoxide init zsh)"

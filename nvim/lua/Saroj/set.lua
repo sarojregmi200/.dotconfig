@@ -1,6 +1,5 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
-vim.opt.winblend = 100
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -35,13 +34,7 @@ vim.opt.guicursor = ""
 vim.opt.cursorline = true
 vim.opt.signcolumn = "yes"
 
--- setting the concellevel for rendering markdown efficiently
--- setting the concellevel only in markdown files
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-	desc = "Setting conceal level for better preview Markdown files",
-	pattern = { "*.txt", "*.md" },
-	group = vim.api.nvim_create_augroup("set-conceallevel-md", { clear = true }),
-	callback = function()
-		vim.api.nvim_set_option_value("conceallevel", 2, {})
-	end,
-})
+-- caseinsensitive search when all in lower case
+-- case sensitive when case is specified
+vim.opt.ignorecase = true
+vim.opt.smartcase = true

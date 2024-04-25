@@ -6,8 +6,7 @@ return {
 		conform.setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				-- Use a sub-list to run only the first available formatter
-				javascript = { { "prettierd" } },
+				javascript = { { "prettierd", "prettier" } },
 			},
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				pattern = "*",

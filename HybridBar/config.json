@@ -1,0 +1,24 @@
+{
+    "hybrid": {
+        "namespace": "hybrid-bar",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 1.0
+    },
+    "left-label_username": {
+        "text": "",
+        "command": "whoami",
+        "tooltip": "Kernel:",
+        "tooltip_command": "uname -r",
+        "update_rate": 50000
+    },
+    "centered-label_centerdummy": {
+        "text": "Example Config - Create/Edit yours at ~/.config/HybridBar/config.json",
+        "tooltip": "An example of a centered label"
+    },
+    "right-label_rightdummy": {
+        "text": "dummy right aligned label",
+        "tooltip": "An example of a right-aligned label"
+    }
+}

@@ -41,10 +41,8 @@ return {
 		)
 		vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Search the nvim help" })
 		vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "Search the Keymaps" })
-		vim.keymap.set("n", "<leader>sd", builtin.keymaps, { desc = "Search the diagnostics" })
-        vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-        vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-        vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-
+		vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
+		vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
+		vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 	end,
 }

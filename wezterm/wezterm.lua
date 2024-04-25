@@ -12,7 +12,7 @@ config.audible_bell = "Disabled" --beep sound
 -- setting the color theme
 config.enable_tab_bar = false
 config.colors = {
-	background = "#111",
+	background = "#040F0F",
 }
 
 --turning off some overlapping keybinds
@@ -25,7 +25,10 @@ config.keys = {
 }
 
 -- font configuration
-config.font = wezterm.font("Fira Code")
+config.font = wezterm.font("Ubuntu Mono")
 config.font_size = 16
+
+-- window configuration
+config.window_background_opacity = 1
 
 return config
