@@ -2,6 +2,7 @@ return {
 	"numToStr/Comment.nvim",
 	-- for todo and notes comments and fixed comment highlighing
 	config = function()
+		local ft = require("Comment.ft")
 		local options = {
 			opleader = {
 				line = "sc",
@@ -20,6 +21,9 @@ return {
 				extra = true,
 			},
 		}
+		ft.set("javascriptreact", { "{/*%s*/}", "{/*%s*/}" })
+		ft.set("typescriptreact", { "{/*%s*/}", "{/*%s*/}" })
+
 		require("Comment").setup(options)
 	end,
 }

@@ -75,13 +75,32 @@ export PATH=$PATH:$HOME/.cargo/bin/
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # adding go to the path
 export GO_PATH="/usr/local/go/"
 
 
 # addind the zoxide configuration
 eval "$(zoxide init zsh)"
+
+# lazy loading the nvm due to the loading issue
+lazy_load_nvm() {
+  unset -f npm node nvm
+  export NVM_DIR=~/.nvm
+  [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+}
+
+ npm() {
+  lazy_load_nvm
+  npm $@
+ }
+
+node() {
+  lazy_load_nvm
+  node $@
+}
+
+nvm() {
+  lazy_load_nvm
+  nvm $@
+}

@@ -5,7 +5,7 @@ return { -- LSP Configuration & Plugins
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-
+		"rafamadriz/friendly-snippets",
 		-- Useful status updates for LSP.
 		-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 		{ "j-hui/fidget.nvim", opts = {} },
@@ -15,6 +15,8 @@ return { -- LSP Configuration & Plugins
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
+		-- configuring the friendly vsc*ode like snippets
+		require("luasnip.loaders.from_vscode").lazy_load()
 		-- Installing the emmet for html support
 		local lspconfig = require("lspconfig")
 		local configs = require("lspconfig.configs")
