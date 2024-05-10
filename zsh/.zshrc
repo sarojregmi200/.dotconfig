@@ -28,9 +28,6 @@ PS1=' %B%F{202}%20<~/...<%~%<<%f%b ${vcs_info_msg_0_}: '
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export VISUAL=nvim
 
-# Alias for terminal 
-alias wezterm='flatpak run org.wezfurlong.wezterm'
-
 # configuring the history
 HISTSIZE=5000
 SAVEHIST=5000
@@ -107,3 +104,6 @@ zinit light-mode for \
 # adding fnm
 zinit light "dominik-schwabe/zsh-fnm"
 export ZSH_FNM_NODE_VERSION="18.20.2"
+
+# adding alias for tmux fzf
+alias fzf-tmux="/home/saroj/.config/.dotconfig/zsh/scripts/fzf-tmux"
