@@ -29,9 +29,10 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 export VISUAL=nvim
 
 # configuring the history
-HISTSIZE=5000
-SAVEHIST=5000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.config/.dotconfig/zsh/.zshhist
+setopt appendhistory
 
 # adding the fzf keybindings
 eval "$(fzf --zsh)"
@@ -107,3 +108,19 @@ export ZSH_FNM_NODE_VERSION="18.20.2"
 
 # adding alias for tmux fzf
 alias fzf-tmux="/home/saroj/.config/.dotconfig/zsh/scripts/fzf-tmux"
+
+
+# adding ruby executables to the path
+export PATH=$PATH:/home/saroj/.local/share/gem/ruby/3.0.0/bin 
+
+# pnpm
+export PNPM_HOME="/home/saroj/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+#
+
+# bfg repo cleaner 
+alias bfg="java -jar ~/.config/.dotconfig/bin/bfg-1.14.0.jar"
