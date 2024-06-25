@@ -1,8 +1,9 @@
 -- remaping the space key as leader
 vim.g.mapleader = " "
 
--- remaping the netrw
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Go to the file explorer" })
+-- mapping for the file manager
+vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>", { desc = "Go to the file explorer" })
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- remaping the esc to jk or kj
 vim.keymap.set("i", "kj", "<ESC>", { desc = "Exit the insert mode" })

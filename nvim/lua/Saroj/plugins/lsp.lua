@@ -201,6 +201,9 @@ return { -- LSP Configuration & Plugins
 					},
 				},
 			},
+
+			-- for ruby
+			solargraph = {},
 		}
 
 		-- Ensure the servers and tools above are installed

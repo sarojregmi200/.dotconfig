@@ -60,8 +60,10 @@ export PATH="$PATH:/home/saroj/.local/bin"
 
 # Android studio PATH
 export ANDROID_HOME=$HOME/Android/Sdk/
+export GRADLE_HOME=/usr/bin/gradle
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$GRADLE_HOME/bin
 
 # Adding rust tool chain to PATH
 export PATH=$PATH:$HOME/.cargo/bin/
