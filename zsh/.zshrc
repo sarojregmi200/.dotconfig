@@ -122,7 +122,11 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
 #
+# Adding deno
+export DENO_INSTALL="/home/saroj/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 # bfg repo cleaner 
 alias bfg="java -jar ~/.config/.dotconfig/bin/bfg-1.14.0.jar"

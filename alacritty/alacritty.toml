@@ -1,12 +1,12 @@
 [colors.primary]
-background = "#000000"
+background = "#262626"
 
 [font]
 size = 14.0
 
 [font.normal]
 style = "Regular"
-family = "MesloLGSDZ Nerd Font" 
+family = "GeistMono NFP" 
 
 [window]
 decorations = "none"

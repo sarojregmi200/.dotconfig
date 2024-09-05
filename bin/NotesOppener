@@ -1,28 +1,36 @@
 #!/usr/bin/env bash
 
-if [[ $# -eq 1 ]]; then
-    selected=$1
-else
-    selected=$(find ~/Documents/Notes/ -mindepth 1 -maxdepth 1 -type d | fzf )
-fi
+sessionName=Notes
+NotesDir="/home/saroj/Documents/Notes"
+selected=
 
-if [[ -z $selected ]]; then
+function selectFromNotesFiles {
+    selected="$NotesDir/$(find $NotesDir -regex '.*.md' | sed -r "s|/home/saroj/Documents/Notes/||" | fzf)"
+
+    # exiting the script if nothing is selected 
+    if [[ -z $selected ]]; then
+        exit 0
+    fi
+}
+
+# if notes session is present, and we are inside tmux
+# switching to the notes immediately
+if [[ -n $TMUX ]]; then
+    if tmux has-session -t $sessionName &> /dev/null; then
+        tmux switch-client -t $sessionName 
+        exit 0
+    fi
+    selectFromNotesFiles
+    tmux new-session -ds $sessionName -c $NotesDir "nvim $selected"
+    tmux switch-client -t $sessionName 
     exit 0
 fi
 
-selected_name="Notes"
-tmux_running=$(pgrep tmux)
-
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
-    nvim ./
+if tmux has-session -t $sessionName &> /dev/null; then
+    tmux attach-session -t $sessionName
     exit 0
 fi
 
-if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected
-fi
-
-tmux switch-client -t $selected_name
-
-
+selectFromNotesFiles
+tmux new-session -s $sessionName -c $NotesDir "nvim $selected"
+exit 0
