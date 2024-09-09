@@ -16,12 +16,12 @@ return {
 		vim.cmd.colorscheme(color)
 
 		-- making the background transparent
-		-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-		-- --
-		-- -- -- removing the signColumn background
-		-- vim.api.nvim_set_hl(0, "signColumn", { bg = "none" })
-		-- --
-		-- -- -- removing the transparent window
-		-- vim.api.nvim_win_set_option(0, "winblend", 0)
+		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+		--
+		-- -- removing the signColumn background
+		vim.api.nvim_set_hl(0, "signColumn", { bg = "none" })
+		--
+		-- -- removing the transparent window
+		vim.api.nvim_win_set_option(0, "winblend", 0)
 	end,
 }
