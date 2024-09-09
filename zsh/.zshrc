@@ -111,7 +111,6 @@ export ZSH_FNM_NODE_VERSION="18.20.2"
 # adding alias for tmux fzf
 alias fzf-tmux="/home/saroj/.config/.dotconfig/zsh/scripts/fzf-tmux"
 
-
 # adding ruby executables to the path
 export PATH=$PATH:/home/saroj/.local/share/gem/ruby/3.0.0/bin 
 
