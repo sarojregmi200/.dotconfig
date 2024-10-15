@@ -25,7 +25,6 @@ config.keys = {
 }
 
 -- font configuration
-config.font = wezterm.font("Ubuntu Mono")
 config.font_size = 16
 
 -- window configuration
