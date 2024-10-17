@@ -28,6 +28,10 @@ config.keys = {
 config.font_size = 16
 
 -- window configuration
-config.window_background_opacity = 1
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 200
+
+-- window titlebar
+config.window_decorations = "RESIZE"
 
 return config
