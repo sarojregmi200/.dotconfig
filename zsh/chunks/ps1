@@ -1,0 +1,96 @@
+# enabaling the '${var}' option for string formatting.
+setopt prompt_subst
+
+# loading the necessary hooks 
+autoload -Uz  add-zsh-hook vcs_info
+
+# configuring the git command
+add-zsh-hook precmd vcs_info	
+zstyle ':vcs_info:*' check-for-changes true
+
+#styling the git command
+zstyle ':vcs_info:*' unstagedstr '*'
+zstyle ':vcs_info:*' stagedstr '+'
+zstyle ':vcs_info:git:*' formats '%c%u(%b)'
+
+calculate_ps1() {
+# setting the prompt string
+#
+# %B means begins the bold character. 
+# %F{202} sets the foreground color to a shade of orange/red
+# %20<~/...<%~%<<
+#   %20< opens the truncation.
+#   ~/... this is what the truncated string will be replaced by.
+#   < this seperates the truncation with the actual string.
+#   %~ this is the character (complete path $PWD) that will be truncated.
+#   %<< this marks the end of truncation.
+#
+# %f resets the color
+# %b resets the bold or closes the bold character.
+#
+# ${vcs_info_msg_0_} displays the git information.
+#
+# This is my previous PS1 variable.
+# %B%F{202}%20<~/...<%~%<<%f%b ${vcs_info_msg_0_}: 
+#
+# NOTE: It has few problems, i.e it doesnot care about directories 
+# and treats everything as a string.
+# Which causes it to truncate:
+#       ~/...onfig/alacritty *(main):
+#  for path : 
+#       /home/saroj/.config/.dotconfig/alacritty 
+#  while it should be like: 
+#       ~/.dotconfig/alacritty *(main):
+# 
+# Here is a new implementation to solve this problem.
+
+current_dir=$(basename $PWD)
+path_array=(${(s:/:)PWD})
+second_last_chunk=""
+first_word=$path_array[1]
+user=$(whoami)
+directory_str=""
+directory_len=${#path_array[@]}
+
+
+# if path is empty it means we are at / directory 
+# so, rendering / and returning
+if [ -z "$path_array" ]; then
+    directory_str="/"
+    return
+fi
+
+
+# setting second_last_chunk only if available
+if [ ${#path_array[@]} -gt 1 ];then
+    second_last_chunk=$path_array[-2]
+fi
+
+if [ $first_word = "home" ];then
+    if [ $current_dir = $user ];then 
+        directory_str="~"
+    elif [ $second_last_chunk = $user ]; then
+        directory_str="~/$current_dir"
+    elif [ ${#path_array[@]} -gt 4 ]; then
+        directory_str="~/../$second_last_chunk/$current_dir"
+    else
+        directory_str="~/$second_last_chunk/$current_dir"
+    fi
+else
+    if [ $directory_len -eq 1 ];then 
+        directory_str="/$first_word"
+    elif [ $directory_len -eq 2 ]; then
+        directory_str="/$first_word/$current_dir"
+    else
+        directory_str="/../$second_last_chunk/$current_dir"
+    fi
+fi    
+}
+
+
+update_ps1() {
+    calculate_ps1
+    PROMPT=" %B%F{202}$directory_str%f%b ${vcs_info_msg_0_}: " 
+}
+
+precmd_functions+=(update_ps1)
