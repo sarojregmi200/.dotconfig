@@ -1,0 +1,25 @@
+open_notes() {
+    sh "/home/saroj/.config/.dotconfig/bin/NotesOpener"
+}
+
+open_projects() {
+    sh "/home/saroj/.config/bin/ProjectOpener"
+}
+
+
+# It is necessary to define keybinds inside this function because i have zvm setup
+# which provides better vim mappings for zsh and it is controlling the vim keymaps.
+#
+# And this function allows the keybindings defined inside it to be executed 
+# After the script is loaded, which will prevent this plugin from overriding our
+# custom script keybindings
+#
+function my_init() {
+    zvm_define_widget notes_opener open_notes
+    zvm_define_widget project_opener open_projects
+
+    bindkey  '^n' notes_opener
+    bindkey  '^f' project_opener
+}
+zvm_after_init_commands+=(my_init)
+

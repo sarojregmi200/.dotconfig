@@ -1,0 +1,8 @@
+# configuring the history
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.config/.dotconfig/zsh/.zshhist
+setopt appendhistory
+
+# configuring default editor
+export VISUAL=nvim

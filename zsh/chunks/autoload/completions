@@ -1,0 +1,13 @@
+# bun completions
+[ -s "/home/saroj/.bun/_bun" ] && source "/home/saroj/.bun/_bun"
+
+
+# for auto/tab completion
+# TODO: update the completion to support fzf and not error out on invalid search
+autoload -U compinit 
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' menu select # matcher-list enables the case insensitivity.
+setopt MENU_COMPLETE # to automatically show the results regardless of the case soon after the tab is pressed.
+compinit
+
+# for autosuggestions
+source ~/.config/.dotconfig/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

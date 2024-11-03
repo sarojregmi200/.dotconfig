@@ -1,0 +1,6 @@
+#enabaling the ls color and ll as a better ls alias
+alias ll="ls -alG"
+alias ls="ls --color=auto"
+
+# bfg repo cleaner 
+alias bfg="java -jar ~/.config/.dotconfig/bin/bfg-1.14.0.jar"
