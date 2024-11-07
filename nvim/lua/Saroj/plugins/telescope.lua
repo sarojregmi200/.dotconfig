@@ -17,10 +17,15 @@ return {
 					fuzzy = true, -- false will only do exact matching
 					override_generic_sorter = true, -- override the generic sorter
 					override_file_sorter = true, -- override the file sorter
-					case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+					case_mode = "respect_case", -- or "ignore_case" or "respect_case"
 				},
 			},
 			defaults = {
+				path_display = { "truncate" },
+				file_ignore_patterns = {
+					"node_modules",
+					".git",
+				},
 				mappings = {
 					i = {
 						["<C-k>"] = actions.move_selection_previous, -- move up
