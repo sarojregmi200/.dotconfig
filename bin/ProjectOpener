@@ -6,7 +6,7 @@ else
     # TODO: Read which folders to read from a file.
     # WHY?? beacause it will make it easier to transport this script to 
     # different environment where my projects might be at different locations.
-    selected=$(find ~/Documents/projects/ ~/.config/.dotconfig/ -mindepth 1 -maxdepth 1 -type d | fzf )
+    selected=$(find ~/Documents/projects/ ~/Documents/BrightOffice/ ~/.config/.dotconfig/ -mindepth 1 -maxdepth 1 -type d | fzf )
 fi
 
 if [[ -z $selected ]]; then

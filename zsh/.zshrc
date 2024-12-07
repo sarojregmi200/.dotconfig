@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-
 # zsh plugin manager zinit
 source "$HOME/.config/.dotconfig/zsh/chunks/zinit"
 

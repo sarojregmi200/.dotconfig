@@ -1,3 +1,5 @@
+#!/usr/bin/zsh
+
 # enabaling the '${var}' option for string formatting.
 setopt prompt_subst
 
@@ -90,7 +92,17 @@ fi
 
 update_ps1() {
     calculate_ps1
-    PROMPT=" %B%F{202}$directory_str%f%b ${vcs_info_msg_0_}: " 
+    PATH_PS1=" %B%F{202}$directory_str%f%b ${vcs_info_msg_0_}: " 
+    MINIMAL_PS1=" %B%F{202}$;%f%b "
+
+    if [[ $MINIMAL_PROMPT = true ]];then
+        PROMPT="$MINIMAL_PS1"
+    else
+        PROMPT="$PATH_PS1"
+    fi
+
+    # lets make it a simple dollar with git support.
+    # TODO: Move the git status to the tmux
 }
 
 precmd_functions+=(update_ps1)

@@ -1,3 +1,4 @@
+#!/usr/bin/zsh
 open_notes() {
     sh "/home/saroj/.config/.dotconfig/bin/NotesOpener"
 }

@@ -1,3 +1,4 @@
+#!/usr/bin/zsh
 # bun completions
 [ -s "/home/saroj/.bun/_bun" ] && source "/home/saroj/.bun/_bun"
 

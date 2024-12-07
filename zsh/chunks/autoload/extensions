@@ -1,3 +1,4 @@
+#!/usr/bin/zsh
 # adding the fzf keybindings
 eval "$(fzf --zsh)"
 

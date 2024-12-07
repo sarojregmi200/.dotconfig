@@ -1,0 +1,6 @@
+#!/usr/bin/zsh
+
+# This flag controls the ps1 prompt appearance.
+# If set to true then will replace current ps1 variable with
+# $; 
+export MINIMAL_PROMPT=

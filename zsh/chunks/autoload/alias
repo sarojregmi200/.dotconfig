@@ -1,3 +1,4 @@
+#!/usr/bin/zsh
 #enabaling the ls color and ll as a better ls alias
 alias ll="ls -alG"
 alias ls="ls --color=auto"
