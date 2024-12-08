@@ -1,10 +1,10 @@
 #!/usr/bin/zsh
 open_notes() {
-    sh "/home/saroj/.config/.dotconfig/bin/NotesOpener"
+    sh "$HOME/.config/.dotconfig/bin/NotesOpener"
 }
 
 open_projects() {
-    sh "/home/saroj/.config/bin/ProjectOpener"
+    sh "$HOME/.config/bin/ProjectOpener"
 }
 
 

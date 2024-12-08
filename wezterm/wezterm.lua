@@ -12,7 +12,7 @@ config.audible_bell = "Disabled" --beep sound
 -- setting the color theme
 config.enable_tab_bar = false
 config.colors = {
-	background = "#0d1117",
+	background = "#000000",
 }
 
 --turning off some overlapping keybinds
@@ -25,8 +25,8 @@ config.keys = {
 }
 
 -- font configuration
-config.font_size = 12
-config.font = wezterm.font("GeistMono NFP")
+config.font_size = 16
+-- config.font = wezterm.font("GeistMono NFP")
 
 config.enable_wayland = false
 
