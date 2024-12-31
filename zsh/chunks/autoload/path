@@ -20,6 +20,8 @@ global_bin="/bin/"
 user_bin="/usr/bin/"
 user_local_bin="/usr/local/bin/"
 
+export GO_BIN="$HOME/go/bin/"
+
 # Android studio PATH
 export ANDROID_HOME=$HOME/Android/Sdk/
 export GRADLE_HOME=/usr/bin/gradle
@@ -27,4 +29,4 @@ export GRADLE_HOME=/usr/bin/gradle
 # Custom application build from source path
 export CUSTOM_BUILD_PATH=$HOME/Documents/Applications/
 
-export PATH="$PATH:$local_bin:$global_bin:$user_bin:$user_local_bin:$BUN_INSTALL/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$HOME/.cargo/bin/:/home/saroj/.local/share/gem/ruby/3.0.0/bin:$DENO_INSTALL/bin:$CUSTOM_BUILD_PATH"
+export PATH="$PATH:$local_bin:$global_bin:$user_bin:$user_local_bin:$BUN_INSTALL/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$HOME/.cargo/bin/:/home/saroj/.local/share/gem/ruby/3.0.0/bin:$DENO_INSTALL/bin:$CUSTOM_BUILD_PATH:$GO_BIN"

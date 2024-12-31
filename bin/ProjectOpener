@@ -1,28 +1,24 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
-if [[ $# -eq 1 ]]; then
-    selected=$1
-else
-    # TODO: Read which folders to read from a file.
-    # WHY?? beacause it will make it easier to transport this script to 
-    # different environment where my projects might be at different locations.
-    selected=$(find ~/Documents/projects/ ~/Documents/BrightOffice/ ~/.config/.dotconfig/ -mindepth 1 -maxdepth 1 -type d | fzf )
-fi
+source "$HOME/.config/bin/variables.sh"
 
-if [[ -z $selected ]]; then
+# TODO: Read which folders to read from a file.
+# WHY?? beacause it will make it easier to transport this script to 
+# different environment where my projects might be at different locations.
+selected=$(find $PROJECT_FILES -mindepth 1 -maxdepth 1 -type d | fzf )
+
+if [[ -z $selected ]];then
+    echo "Bye!!!"
     exit 0
 fi
 
-selected_name=$(basename "$selected" | tr . _)
-tmux_running=$(pgrep tmux)
+isTmuxPresent=$(pgrep tmux)
+isInsideTmux="$TMUX"
+newSessionName=$(basename $selected)
 
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected 
-    exit 0
+if [[ -z $isTmuxPresent ]];then
+    # -s gives the session a name
+    # -c means the starting directory for the new session
+    tmux new-session -d -s $newSessionName -c $selected 
+    tmux attach-session -t $newSessionName
 fi
-
-if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected 
-fi
-
-tmux switch-client -t $selected_name

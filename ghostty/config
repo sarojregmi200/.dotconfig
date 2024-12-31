@@ -1,0 +1,25 @@
+# ghosty configuration
+background = 000000
+
+# Removing the title bar
+window-decoration = false
+
+# default font size
+font-size = 16
+
+# exit warning
+confirm-close-surface = false
+
+# Window padding
+window-padding-y = 10
+
+# removing the alt + number because it's binded to tmux tilish
+keybind = alt+five=unbind
+keybind = alt+eight=unbind
+keybind = alt+three=unbind
+keybind = alt+nine=unbind
+keybind = alt+two=unbind
+keybind = alt+four=unbind
+keybind = alt+one=unbind
+keybind = alt+six=unbind
+keybind = alt+seven=unbind

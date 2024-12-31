@@ -1,10 +1,11 @@
 #!/usr/bin/zsh
+
 open_notes() {
     sh "/home/saroj/.config/.dotconfig/bin/NotesOpener"
 }
 
 open_projects() {
-    sh "/home/saroj/.config/bin/ProjectOpener"
+   sh "/home/saroj/.config/bin/ProjectOpener"
 }
 
 
@@ -16,6 +17,9 @@ open_projects() {
 # custom script keybindings
 #
 function my_init() {
+    # reloading the overridden fzf keybinds
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
     zvm_define_widget notes_opener open_notes
     zvm_define_widget project_opener open_projects
 

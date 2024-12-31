@@ -1,15 +1,8 @@
 return {
-	"ellisonleao/gruvbox.nvim",
+	"rebelot/kanagawa.nvim",
 	priority = 1000,
 
 	config = function()
-		-- using the color theme.
-		local color = "gruvbox"
-
-		vim.g.gruvbox_contrast_dark = "hard"
-
-		vim.cmd.colorscheme(color)
-
 		-- making the background transparent
 		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 
