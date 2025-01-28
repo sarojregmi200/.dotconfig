@@ -17,6 +17,7 @@ return { -- LSP Configuration & Plugins
 	config = function()
 		-- configuring the friendly vsc*ode like snippets
 		require("luasnip.loaders.from_vscode").lazy_load()
+
 		-- Installing the emmet for html support
 		local lspconfig = require("lspconfig")
 		local configs = require("lspconfig.configs")

@@ -1,11 +1,11 @@
 # ghosty configuration
-background = 000000
+background = #141617
 
 # Removing the title bar
 window-decoration = false
 
 # default font size
-font-size = 16
+font-size = 12
 
 # exit warning
 confirm-close-surface = false

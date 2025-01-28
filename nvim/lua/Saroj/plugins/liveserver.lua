@@ -1,7 +1,7 @@
 return {
 	"aurum77/live-server.nvim",
 	config = function()
-		require("plugins.live-server")
+		require("plugins.live-server").install()
 	end,
 	cmd = {
 		"LiveServer",

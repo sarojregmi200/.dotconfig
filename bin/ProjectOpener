@@ -2,7 +2,7 @@
 
 source "$HOME/.config/bin/variables.sh"
 
-# TODO: Read which folders to read from a file.
+# Reading which folders to read from a file.
 # WHY?? beacause it will make it easier to transport this script to 
 # different environment where my projects might be at different locations.
 selected=$(find $PROJECT_FILES -mindepth 1 -maxdepth 1 -type d | fzf )
@@ -12,13 +12,28 @@ if [[ -z $selected ]];then
     exit 0
 fi
 
-isTmuxPresent=$(pgrep tmux)
+isTmuxPresent="$(pgrep tmux)"
 isInsideTmux="$TMUX"
-newSessionName=$(basename $selected)
+# selecting the first a-z characters without any special characters
+# since special character may make it difficult while attaching to the session.
+sessionName=$(basename $selected | sed -E 's/^([a-z]+).*/\1/')
+echo $TERM
 
-if [[ -z $isTmuxPresent ]];then
+if [[ -n $isTmuxPresent ]];then
+    # creating the session if it is not present and going to it.
     # -s gives the session a name
     # -c means the starting directory for the new session
-    tmux new-session -d -s $newSessionName -c $selected 
-    tmux attach-session -t $newSessionName
+    # -d creates a detached session
+    tmux new-session -D -A -s $sessionName 
+
+    # tmux attach-session -t $sessionName
+    exit 0
 fi
+
+if [[ -n $isInsideTmux ]];then
+    echo "inside"
+    # tmux is running but we are not inside tmux
+else
+    echo "outside"
+fi
+
