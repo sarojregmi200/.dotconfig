@@ -25,6 +25,12 @@ local function get_deduplicated_jumplist()
 	local current_dir = vim.fn.getcwd()
 
 	-- Get jumplist and create a reverse lookup for faster buffer name access
+
+	-- NOTE:
+	-- Lua has 1 based indexing
+	-- getjumplist returns a table with jumplist and
+	-- last used jump position in the list.
+
 	local jumps = vim.fn.getjumplist()[1]
 	local buf_names = {}
 	local file_positions = {}
@@ -34,7 +40,12 @@ local function get_deduplicated_jumplist()
 		local jump = jumps[i]
 		local bufnr = jump.bufnr
 
+		-- TODO:
+		-- Check why are we doing so.
 		-- Cache buffer names for faster lookup
+		-- Interesting why are we taking the buffer number
+		-- instead of comparing it to the file that way we can get only
+		-- file entry in the list.
 		if not buf_names[bufnr] then
 			buf_names[bufnr] = vim.api.nvim_buf_get_name(bufnr)
 		end
@@ -51,6 +62,10 @@ local function get_deduplicated_jumplist()
 	end
 
 	-- Preallocate table size for better performance
+	--
+	-- TODO: Combine this and above implementation to make sure
+	-- we age doing it in one go, no need to resort it or remove duplicates afterwards
+	-- Intersting now we are sorting it.
 	local unique_jumps = {}
 	for _, pos in pairs(file_positions) do
 		unique_jumps[#unique_jumps + 1] = pos

@@ -14,3 +14,6 @@ done
 
 # loading the keybindings
 source "$HOME/.config/.dotconfig/zsh/chunks/keybinds"
+
+# bun completions
+[ -s "/home/saroj/.bun/_bun" ] && source "/home/saroj/.bun/_bun"
