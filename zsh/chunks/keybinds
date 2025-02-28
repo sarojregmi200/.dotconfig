@@ -8,6 +8,15 @@ open_projects() {
    sh "/home/saroj/.config/bin/ProjectOpener"
 }
 
+toggle_minimal_prompt() {
+    if [[ $MINIMAL_PROMPT == true ]]; then
+        export MINIMAL_PROMPT=false
+        echo "Minimal prompt disabled!!"
+    else
+        export MINIMAL_PROMPT=true
+        echo "Minimal prompt Activated!!"
+    fi
+}
 
 # It is necessary to define keybinds inside this function because i have zvm setup
 # which provides better vim mappings for zsh and it is controlling the vim keymaps.
@@ -22,9 +31,10 @@ function my_init() {
 
     zvm_define_widget notes_opener open_notes
     zvm_define_widget project_opener open_projects
+    zvm_define_widget minimal_prompt toggle_minimal_prompt
 
     bindkey  '^n' notes_opener
     bindkey  '^f' project_opener
+    bindkey  '^p' minimal_prompt
 }
 zvm_after_init_commands+=(my_init)
-
