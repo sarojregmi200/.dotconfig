@@ -26,8 +26,6 @@ toggle_minimal_prompt() {
 # custom script keybindings
 #
 function my_init() {
-    # reloading the overridden fzf keybinds
-    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
     zvm_define_widget notes_opener open_notes
     zvm_define_widget project_opener open_projects
@@ -36,5 +34,8 @@ function my_init() {
     bindkey  '^n' notes_opener
     bindkey  '^f' project_opener
     bindkey  '^p' minimal_prompt
+
+    # adding the fzf keybindings
+    eval "$(fzf --zsh)"
 }
 zvm_after_init_commands+=(my_init)

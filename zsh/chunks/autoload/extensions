@@ -1,6 +1,4 @@
 #!/usr/bin/zsh
-# adding the fzf keybindings
-eval "$(fzf --zsh)"
 
 # addind the zoxide configuration
 eval "$(zoxide init zsh)"
