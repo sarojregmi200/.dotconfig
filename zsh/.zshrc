@@ -17,3 +17,6 @@ source "$HOME/.config/.dotconfig/zsh/chunks/keybinds"
 
 # Loading all the completions
 source "$HOME/.config/.dotconfig/zsh/completions/loader.zsh"
+
+# bun completions
+[ -s "/home/saroj/.bun/_bun" ] && source "/home/saroj/.bun/_bun"
