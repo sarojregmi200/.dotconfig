@@ -15,10 +15,10 @@ export BUN_INSTALL="$HOME/.bun"
 export DENO_INSTALL="/home/saroj/.deno"
 
 # Adding common binary paths
-local_bin="/home/saroj/.local/bin/"
-global_bin="/bin/"
-user_bin="/usr/bin/"
-user_local_bin="/usr/local/bin/"
+local_bin=/home/saroj/.local/bin/
+global_bin=/bin/
+user_bin=/usr/bin/
+user_local_bin=/usr/local/bin/
 
 export GO_BIN="$HOME/go/bin/"
 
