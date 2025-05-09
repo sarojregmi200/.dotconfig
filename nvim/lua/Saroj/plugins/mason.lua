@@ -2,6 +2,7 @@ return {
   "williamboman/mason.nvim",
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
+    'saghen/blink.cmp',
   },
   config = function()
     -- setting up mason
@@ -21,28 +22,22 @@ return {
       emmet_ls = {},
       tailwindcss = {},
       cssls = {},
-      eslint = {},
       bashls = {},
       jqls = {},
-      clangd = {},
       gopls = {},
       intelephense = {},
     }
 
     local servers_names = vim.tbl_keys(servers or {});
+    local capabilities = require("blink.cmp").get_lsp_capabilities()
 
     mason_lspconfig.setup({
       ensure_installed = servers_names,
       automatic_installation = true,
       handlers = {
         function(server_name)
-          local server = servers[server_name] or {}
           local lspconfig = require("lspconfig")
-          local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-          server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-
-          lspconfig[server_name].setup(server);
+          lspconfig[server_name].setup({ capabilities = capabilities });
         end,
       }
     })

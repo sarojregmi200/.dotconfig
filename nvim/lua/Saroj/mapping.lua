@@ -11,6 +11,7 @@ vim.keymap.set("n", "<leader>fl", "<CMD>Oil<CR>", { desc = "Go to the file explo
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- remaping the esc to jk or kj
+-- TODO: try remapping to <ESC> and how it feels when caps lock acts as esc
 vim.keymap.set("i", "kj", "<ESC>", { desc = "Exit the insert mode" })
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit the insert mode" })
 

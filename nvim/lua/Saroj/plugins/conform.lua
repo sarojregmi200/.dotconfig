@@ -4,25 +4,40 @@ return {
 		local conform = require("conform")
 
 		conform.setup({
+			log_level = vim.log.levels.DEBUG,
+			formatters = {
+				prettierd = {
+					inherit = false,
+					command = "prettierd",
+					args = { "$FILENAME" },
+				},
+			},
 			formatters_by_ft = {
 				lua = { "stylua" },
-				javascript = { { "prettierd", "prettier" } },
+				typescriptreact = {
+          "prettier",
+					"prettierd",
+          stop_after_first = true,
+				},
+				json = { "jq" },
 			},
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				pattern = "*",
-				callback = function(args)
-					conform.format({ bufnr = args.buf })
-				end,
-			}),
-			format_on_save = {
-				-- These options will be passed to conform.format()
-				timeout_ms = 500,
-				lsp_fallback = true,
-			},
+			lsp_fallback = true,
 		})
 
 		vim.keymap.set("n", "<c-f>", function()
-			conform.format()
+			print("Formatting the file")
+			local bufid = vim.api.nvim_get_current_buf()
+			conform.format({ bufnr = bufid }, function(err, did_edit)
+				if err then
+					print("Error occured while formatting the file")
+				end
+
+				if did_edit then
+					print("File formatted successfully")
+				else
+					print("Noting to be formatted!!")
+				end
+			end)
 		end, { desc = "Format the current file" })
 	end,
 }

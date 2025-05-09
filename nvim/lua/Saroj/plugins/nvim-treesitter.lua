@@ -14,6 +14,7 @@ return {
             sync_install = false,
             highlight = { enable = true },
             indent = { enable = true },
+            auto_install = true,
             refactor = {
                 highlight_definitions = { enable = true, clear_on_cursor_move = true },
                 smart_rename = { enable = true },

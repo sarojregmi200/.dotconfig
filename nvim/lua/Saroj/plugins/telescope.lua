@@ -63,6 +63,10 @@ return {
             desc = "[S]earch [B]uiltin functions",
         })
 
+        vim.keymap.set("n", "<leader>sh", telescope_builtin.help_tags, {
+            desc = "[S]earch [H]elp tags",
+        })
+
         vim.keymap.set("n", "<leader>st", telescope_builtin.treesitter, {
             desc = "[S]earch  [T]reesitter",
         })
