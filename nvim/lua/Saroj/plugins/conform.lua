@@ -2,6 +2,11 @@ return {
 	"stevearc/conform.nvim",
 	config = function()
 		local conform = require("conform")
+		local ts_js_eco = {
+			"prettier",
+			"prettierd",
+			stop_after_first = true,
+		}
 
 		conform.setup({
 			log_level = vim.log.levels.DEBUG,
@@ -14,11 +19,10 @@ return {
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
-				typescriptreact = {
-          "prettier",
-					"prettierd",
-          stop_after_first = true,
-				},
+				typescriptreact = ts_js_eco,
+				javascriptreact = ts_js_eco,
+				javascript = ts_js_eco,
+				typescript = ts_js_eco,
 				json = { "jq" },
 			},
 			lsp_fallback = true,

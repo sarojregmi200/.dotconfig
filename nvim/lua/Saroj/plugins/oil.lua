@@ -10,10 +10,36 @@ return {
 				"permissions",
 				"size",
 			},
+
 			win_options = {
 				wrap = false,
 				signcolumn = "no",
 				cursorcolumn = false,
+			},
+
+			view_options = {
+				show_hidden = true, -- show hidden files by default
+			},
+
+			keymaps = {
+				["<C-h>"] = false,
+				["<C-l>"] = false,
+				["<C-t>"] = false,
+				["<C-r>"] = "actions.refresh",
+				["<C-p>"] = function()
+					local oil = require("oil")
+					local util = require("oil.util")
+
+					local is_preview_open = util.get_preview_win()
+
+					if is_preview_open then
+            vim.api.nvim_win_close(is_preview_open, true)
+					else
+						oil.open_preview({
+              split = "belowright",
+            })
+					end
+				end,
 			},
 
 			delete_to_trash = true,

@@ -19,3 +19,21 @@ vim.keymap.set("n", "d]", function()
     float = true,
   })
 end, { desc = "moves to next vim  diagnostic float" })
+
+--- open the definition in a new split
+vim.keymap.set("n", "gvd", function()
+  vim.cmd("rightbelow vsplit")
+  vim.lsp.buf.definition()
+end, {})
+
+--- open the definition in a new split
+vim.keymap.set("n", "ghd", function()
+  vim.cmd("rightbelow split")
+  vim.lsp.buf.definition()
+end, {})
+
+-- vertical split into file explorer
+vim.keymap.set("n", "v-", function()
+  vim.cmd("rightbelow vsplit")
+  vim.cmd("norm -")
+end, {})
