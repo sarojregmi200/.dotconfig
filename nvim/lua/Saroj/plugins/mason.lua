@@ -24,8 +24,6 @@ return {
       cssls = {},
       bashls = {},
       jqls = {},
-      gopls = {},
-      intelephense = {},
     }
 
     local servers_names = vim.tbl_keys(servers or {});
