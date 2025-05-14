@@ -11,7 +11,7 @@ return {
 			harpoon:list():add()
 		end, { desc = "Add files to harpoon ui" })
 
-		vim.keymap.set("n", "<C-p>", function()
+		vim.keymap.set("n", "<leader>hl", function()
 			harpoon.ui:toggle_quick_menu(harpoon:list())
 		end, { desc = "Open harpoon Ui" })
 
