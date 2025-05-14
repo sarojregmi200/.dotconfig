@@ -12,7 +12,7 @@ config.audible_bell = "Disabled" --beep sound
 -- setting the color theme
 config.enable_tab_bar = false
 config.colors = {
-	background = "#0d1117",
+	background = "#141617",
 }
 
 --turning off some overlapping keybinds

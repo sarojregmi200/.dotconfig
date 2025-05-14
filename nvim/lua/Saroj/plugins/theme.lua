@@ -34,7 +34,7 @@ local grub_box_material = {
 		vim.g.gruvbox_contrast_dark = "hard"
 
 		vim.cmd.colorscheme(color)
-		local bg = "#141617"
+		local bg = "none"
 
 		-- making the background transparent
 		vim.api.nvim_set_hl(0, "Normal", { bg = bg })
