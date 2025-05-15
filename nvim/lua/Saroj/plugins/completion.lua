@@ -27,6 +27,7 @@ return {
 			documentation = {
 				auto_show = true,
 			},
+   accept ={auto_brackets ={enabled = false},},
 			list = {
 				selection = {
           auto_insert = false,
