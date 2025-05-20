@@ -24,6 +24,7 @@ return {
 				javascriptreact = ts_js_eco,
 				javascript = ts_js_eco,
 				typescript = ts_js_eco,
+				svelte = ts_js_eco,
 				json = { "jq" },
 				python = { "black" },
 			},
