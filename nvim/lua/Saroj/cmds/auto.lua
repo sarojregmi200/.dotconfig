@@ -7,17 +7,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
--- Vertical Column in files with indenting
--- TODO: Work on this to make it work properly
-vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = { "*.yml", "*.yaml", "*.py" },
-    desc = "Activating Vertical Highlight in files that require indenting",
-    group = vim.api.nvim_create_augroup("Vertical-highlight", { clear = true }),
-    callback = function()
-        vim.opt.cursorcolumn = true
-        vim.api.nvim_set_hl(0, "hl-CursorColumn", { bg = "#222222" })
-    end,
-})
 
 -- These are the auto commands that run after
 -- the lspattaches and provide some good shortcuts and keymaps

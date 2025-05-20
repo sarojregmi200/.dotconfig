@@ -6,7 +6,7 @@ return {
 			"prettierd",
 			"prettier",
 			stop_after_first = true,
-      timeout_ms = 3000,
+			timeout_ms = 3000,
 		}
 
 		conform.setup({
@@ -25,6 +25,7 @@ return {
 				javascript = ts_js_eco,
 				typescript = ts_js_eco,
 				json = { "jq" },
+				python = { "black" },
 			},
 			lsp_fallback = true,
 		})
