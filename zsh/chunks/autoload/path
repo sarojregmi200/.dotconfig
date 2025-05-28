@@ -29,4 +29,7 @@ export GRADLE_HOME=/usr/bin/gradle
 # Custom application build from source path
 export CUSTOM_BUILD_PATH=$HOME/Documents/Applications/
 
-export PATH="$PATH:$local_bin:$global_bin:$user_bin:$user_local_bin:$BUN_INSTALL/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$HOME/.cargo/bin/:/home/saroj/.local/share/gem/ruby/3.0.0/bin:$DENO_INSTALL/bin:$CUSTOM_BUILD_PATH:$GO_BIN"
+# custom scripts path 
+export SCRIPT_DIR=$HOME/.config/.dotconfig/scripts
+
+export PATH="$PATH:$local_bin:$global_bin:$user_bin:$user_local_bin:$BUN_INSTALL/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$GRADLE_HOME/bin:$HOME/.cargo/bin/:/home/saroj/.local/share/gem/ruby/3.0.0/bin:$DENO_INSTALL/bin:$CUSTOM_BUILD_PATH:$GO_BIN:$SCRIPT_DIR"

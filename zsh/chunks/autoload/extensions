@@ -7,7 +7,6 @@ eval "$(zoxide init zsh)"
 # adding the zsh vi mode plugin: zvm
 zinit ice depth=1
 zinit light jeffreytse/zsh-vi-mode
-ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 ZVM_CURSOR_STYLE_ENABLED=false
 
 # adding fnm

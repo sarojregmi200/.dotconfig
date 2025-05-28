@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Get duration in seconds
+duration=${1:-60}
+minutes=$((duration/60))
+
+# cleaning the screen first
+clear
+
+printf "\n"
+for ((i=duration; i>=0; i--)); do
+  if [ $((i%60)) -eq 0 ]; then
+    printf " \r%02d:%02d " $minutes $((i%60))
+  else
+    minutes=$((minutes-1))
+    printf " \r%02d:%02d " $((i/60)) $((i%60))
+    sleep 1
+  fi
+done
+
+printf "\rTime's up!     \n"
