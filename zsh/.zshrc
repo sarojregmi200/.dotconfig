@@ -20,3 +20,6 @@ source "$HOME/.config/.dotconfig/zsh/completions/loader.zsh"
 
 # bun completions
 [ -s "/home/saroj/.bun/_bun" ] && source "/home/saroj/.bun/_bun"
+
+# Turso
+export PATH="$PATH:/home/saroj/.turso"
