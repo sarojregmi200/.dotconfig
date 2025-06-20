@@ -31,12 +31,10 @@ return {
 
 		local context = require("treesitter-context")
 		context.setup({
-			multiwindow = true,
 			max_lines = 20,
 			trim_scope = "outer",
 		})
 
 		vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "#1e1e2e" })
-		vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = "#1e1e2e" })
 	end,
 }
