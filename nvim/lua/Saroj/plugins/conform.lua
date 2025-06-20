@@ -3,7 +3,6 @@ return {
 	config = function()
 		local conform = require("conform")
 		local ts_js_eco = {
-			"prettierd",
 			"prettier",
 			stop_after_first = true,
       timeout_ms = 3000,

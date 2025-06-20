@@ -26,12 +26,13 @@ return {
 		completion = {
 			documentation = {
 				auto_show = true,
+				auto_show_delay_ms = 50,
 			},
-   accept ={auto_brackets ={enabled = false},},
+			accept = { auto_brackets = { enabled = false } },
 			list = {
 				selection = {
-          auto_insert = false,
-          preselect = true,
+					auto_insert = true,
+					preselect = true,
 				},
 			},
 		},
@@ -43,7 +44,6 @@ return {
 		},
 
 		fuzzy = { implementation = "prefer_rust_with_warning" },
-		signature = { enabled = true },
 	},
 	opts_extend = { "sources.default" },
 }

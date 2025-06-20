@@ -16,9 +16,5 @@ return {
   },
 
   config = function()
-    vim.lsp.set_log_level("debug")
-    local lspconfig = require("lspconfig")
-    lspconfig.tailwindcss.setup({
-    })
   end,
 }
