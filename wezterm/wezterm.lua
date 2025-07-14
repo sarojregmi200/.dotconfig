@@ -25,7 +25,7 @@ config.keys = {
 }
 
 -- font configuration
-config.font_size = 12
+config.font_size = 20
 config.font = wezterm.font("GeistMono NFP")
 
 config.enable_wayland = false
