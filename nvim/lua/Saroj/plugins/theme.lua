@@ -49,9 +49,17 @@ local grub_box_material = {
 	end,
 }
 
+local vague = {
+	"vague2k/vague.nvim",
+	config = function()
+		vim.cmd.colorscheme("vague")
+	end,
+}
+
 local configuredThemes = {
 	grub_box_normal,
 	grub_box_material,
+  vague,
 }
 
-return configuredThemes[2]
+return configuredThemes[3]
