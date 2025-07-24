@@ -3,7 +3,7 @@ return {
   dependencies = {
     "williamboman/mason.nvim",
     {
-      "folke/lazydev.nvim",
+      "sarojregmi200/lazydev.nvim",
       ft = "lua", -- only load on lua files
       opts = {
         library = {
