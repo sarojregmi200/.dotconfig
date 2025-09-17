@@ -19,4 +19,11 @@ source "$HOME/.config/.dotconfig/zsh/chunks/keybinds"
 source "$HOME/.config/.dotconfig/zsh/completions/loader.zsh"
 
 # bun completions
-[ -s "/home/saroj/.bun/_bun" ] && source "/home/saroj/.bun/_bun"
+[ -s "/Users/bright/.bun/_bun" ] && source "/Users/bright/.bun/_bun"
+
+. "$HOME/.local/bin/env"
+
+source <(COMPLETE=zsh jj)
+. "/Users/bright/.deno/env"
+# opencode
+export PATH=/Users/bright/.opencode/bin:$PATH

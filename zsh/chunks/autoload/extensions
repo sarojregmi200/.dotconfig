@@ -12,4 +12,4 @@ ZVM_CURSOR_STYLE_ENABLED=false
 
 # adding fnm
 zinit light "dominik-schwabe/zsh-fnm"
-export ZSH_FNM_NODE_VERSION="18.20.2"
+export ZSH_FNM_NODE_VERSION="24.3.0"
