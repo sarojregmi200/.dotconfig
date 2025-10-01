@@ -1,8 +1,5 @@
 return {
 	"saghen/blink.cmp",
-	-- optional: provides snippets for the snippet source
-	dependencies = { "rafamadriz/friendly-snippets" },
-
 	version = "1.*",
 
 	---@module 'blink.cmp'
@@ -26,20 +23,18 @@ return {
 		completion = {
 			documentation = {
 				auto_show = true,
+				window = { border = "rounded" },
 			},
-   accept ={auto_brackets ={enabled = false},},
+			accept = { auto_brackets = { enabled = false } },
 			list = {
 				selection = {
-          auto_insert = false,
-          preselect = true,
+					auto_insert = false,
+					preselect = true,
 				},
 			},
 		},
-
-		-- Default list of enabled providers defined so that you can extend it
-		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
+			default = { "lsp", "path", "buffer", "snippets" },
 		},
 
 		fuzzy = { implementation = "prefer_rust_with_warning" },
